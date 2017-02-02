@@ -519,6 +519,16 @@ rm -f $RPM_BUILD_ROOT%{_bindir}/%{mingw64_target}-%{mingw64_target}-*
 %{mingw32_libdir}/libssp.a
 %{mingw32_libdir}/libssp.dll.a
 %{mingw32_libdir}/libssp_nonshared.a
+%{mingw32_libdir}/libvtv-0.dll
+%{mingw32_libdir}/libvtv.a
+%{mingw32_libdir}/libvtv.dll.a
+%{mingw32_libdir}/libvtv_stubs-0.dll
+%{mingw32_libdir}/libvtv_stubs.a
+%{mingw32_libdir}/libvtv_stubs.dll.a
+%if 0%{enable_libgomp}
+%{mingw32_libdir}/libgomp-plugin-host_nonshm-1.dll
+%{mingw32_libdir}/libgomp-plugin-host_nonshm.dll.a
+%endif
 %{_prefix}/lib/gcc/%{mingw32_target}/%{version}/crtbegin.o
 %{_prefix}/lib/gcc/%{mingw32_target}/%{version}/crtend.o
 %{_prefix}/lib/gcc/%{mingw32_target}/%{version}/crtfastmath.o
@@ -566,6 +576,16 @@ rm -f $RPM_BUILD_ROOT%{_bindir}/%{mingw64_target}-%{mingw64_target}-*
 %{mingw64_libdir}/libssp.a
 %{mingw64_libdir}/libssp.dll.a
 %{mingw64_libdir}/libssp_nonshared.a
+%{mingw64_libdir}/libvtv-0.dll
+%{mingw64_libdir}/libvtv.a
+%{mingw64_libdir}/libvtv.dll.a
+%{mingw64_libdir}/libvtv_stubs-0.dll
+%{mingw64_libdir}/libvtv_stubs.a
+%{mingw64_libdir}/libvtv_stubs.dll.a
+%if 0%{enable_libgomp}
+%{mingw64_libdir}/libgomp-plugin-host_nonshm-1.dll
+%{mingw64_libdir}/libgomp-plugin-host_nonshm.dll.a
+%endif
 %{_prefix}/lib/gcc/%{mingw64_target}/%{version}/crtbegin.o
 %{_prefix}/lib/gcc/%{mingw64_target}/%{version}/crtend.o
 %{_prefix}/lib/gcc/%{mingw64_target}/%{version}/crtfastmath.o
@@ -667,6 +687,7 @@ rm -f $RPM_BUILD_ROOT%{_bindir}/%{mingw64_target}-%{mingw64_target}-*
 %{mingw32_libdir}/libquadmath.a
 %{mingw32_libdir}/libquadmath.dll.a
 %{_prefix}/lib/gcc/%{mingw32_target}/%{version}/libcaf_single.a
+%{_prefix}/lib/gcc/%{mingw32_target}/%{version}/libgfortranbegin.a
 %if 0%{enable_libgomp}
 %{_prefix}/lib/gcc/%{mingw32_target}/%{version}/finclude
 %endif
@@ -685,6 +706,7 @@ rm -f $RPM_BUILD_ROOT%{_bindir}/%{mingw64_target}-%{mingw64_target}-*
 %{mingw64_libdir}/libquadmath.a
 %{mingw64_libdir}/libquadmath.dll.a
 %{_prefix}/lib/gcc/%{mingw64_target}/%{version}/libcaf_single.a
+%{_prefix}/lib/gcc/%{mingw64_target}/%{version}/libgfortranbegin.a
 %if 0%{enable_libgomp}
 %{_prefix}/lib/gcc/%{mingw64_target}/%{version}/finclude
 %endif
@@ -708,6 +730,7 @@ rm -f $RPM_BUILD_ROOT%{_bindir}/%{mingw64_target}-%{mingw64_target}-*
 %changelog
 * Thu Feb 02 2017 Jajauma's Packages <jajauma@yandex.ru> - 5.4.0-5
 - De-bootstrap build (GCC 5.4.0)
+- Package new files compared to GCC 6.3.0
 
 * Thu Feb 02 2017 Jajauma's Packages <jajauma@yandex.ru> - 5.4.0-4
 - Bootstrap build (GCC 5.4.0)
